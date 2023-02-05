@@ -1,0 +1,32 @@
+<div class="container mt-5 pl-5">
+    <div class="row">
+    <div class="col-md-6 m-auto">
+     
+        <div class="jumbotron">
+          <h3 class="text-center text-primary"> Admin Login Form</h3>
+          <form action="/admin/adlogin" id="login" method="POST">
+            {{#if adloginErr}}
+            <p class="error text-danger font-weight-bold">{{adloginErr}}</p>
+            
+            {{/if}}
+            <div class="form-group">
+              <label for="email">Email Id <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" name="Email" id="email" placeholder="Enter your email id">
+            </div>
+            <div class="form-group">
+              <label for="password">Password <span class="text-danger">*</span></label>
+              <input type="password" class="form-control" name="Password" id="password"
+                placeholder="Enter Your Password">
+            </div>
+            <div class="form-group mt-2">
+              <input type="submit" value="Login" class="btn btn-info btn-block">
+            </div>
+            <div class="form-group ">
+              <div class="row">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

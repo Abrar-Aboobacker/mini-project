@@ -1,0 +1,43 @@
+<section>
+    <div class="container">
+        <div class="row">
+           <div class="col d-flex justify-content-end">
+                 <a href="/admin/add-user" class="btn btn-success mt-4 mb-4" >Add User</a>
+           </div>
+        </div>
+        <table class="table mt-5" id="productsTable">
+  <thead>
+    <tr>
+      <th scope="col">NO</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Age</th>
+      <th scope="col">Options
+
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.Name}}</td>
+      <td>{{this.Email}}</td>
+      <td>{{this.Number}}</td>
+      <td>{{this.Age}}</td>
+      <td>
+        <a href="/admin/edit-user/{{this._id}}" class="btn btn-primary">EDIT</a>
+        <a href="/admin/delete-user/{{this._id}}" class="btn btn-danger" onclick = "return confirm('Are you want delete{{this.Name}}')">DELETE</a>
+      </td> 
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+    </div>
+</section>
+<script>
+$(document).ready( function () {
+    $('#productsTable').DataTable();
+} );
+</script>
